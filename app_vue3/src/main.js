@@ -5,5 +5,6 @@ import router from './router'
 import store from './store'
 
 import './assets/css/tailwind.css'
+import './plugins/vee-validate'
 
 createApp(App).use(store).use(router).mount('#app')
