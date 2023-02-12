@@ -6,3 +6,12 @@ a {
 
 @tailwind components;
 @tailwind utilities;
+
+.spinner {
+    animation: gira 1s linear infinite; 
+}
+@keyframes gira {
+    to {
+        transform: rotate(360deg);
+    }
+}

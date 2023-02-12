@@ -12,7 +12,7 @@
     import TheHeader from '@/components/Partials/TheHeader.vue';
 
     export default {
-        name: 'Default',
+        name: 'LayoutDefault',
 
         components: {
             TheHeader,
