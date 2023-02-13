@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Services\AuthService;
 use App\Http\Requests\AuthLoginRequest;
 use App\Http\Resources\UserResource;
+use App\Http\Requests\AuthRegisterRequest;
+use App\Http\Requests\AuthVerifyEmailRequest;
 
 class AuthController extends Controller
 {
@@ -22,5 +24,22 @@ class AuthController extends Controller
         $token = $this->authService->login($input['email'], $input['password']);
 
         return (new UserResource(auth()->user()))->additional($token);
+    }
+
+    public function register(AuthRegisterRequest $request)
+    {
+        $input = $request->validated();
+        $user = $this->authService->register($input['first_name'], $input['last_name'] ?? '', $input['email'], $input['password']);
+
+        return new UserResource($user);
+    }
+
+    public function verifyEmail(AuthVerifyEmailRequest $request)
+    {
+        $input = $request->validated();
+
+        $user = $this->authService->verifyEmail($input['token']);
+
+        return new UserResource($user);
     }
 }
