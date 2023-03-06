@@ -71,7 +71,7 @@
 
         <div class="my-4 text-center">
           <RouterLink
-            :to="{ name: 'forgot-password' }"
+            :to="{ name: 'forgotPassword' }"
             class="text-sm font-light"
           >
             Esqueci minha senha
