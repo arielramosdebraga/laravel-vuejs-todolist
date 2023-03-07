@@ -11,6 +11,7 @@ use App\Exceptions\LoginInvalidException;
 use App\Exceptions\UserHasBeenTakenException;
 use App\Exceptions\VerifyEmailTokenInvalidException;
 use App\Exceptions\ResetPasswordTokenInvalidException;
+use App\Exceptions\ForgotPasswordEmailInvalidException;
 
 class AuthService
 {
@@ -71,6 +72,11 @@ class AuthService
     public function forgotPassword(string $email)
     {
         $user = User::where('email', $email)->firstOrFail();
+
+        $emailValid = PasswordReset::where('email', $email)->first();
+        if (!empty($emailValid)) {
+            throw new ForgotPasswordEmailInvalidException();
+        }
 
         $token = Str::random(60);
 
