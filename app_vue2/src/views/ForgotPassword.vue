@@ -55,6 +55,15 @@
                 </button>
             </div>
         </ValidationObserver>
+
+        <div class="my-4 text-center">
+            <RouterLink
+                :to="{ name: 'login' }"
+                class="text-sm font-light"
+            >
+                Login
+            </RouterLink>
+        </div>
     </div>
 </template>
 
