@@ -1,18 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import HomeView from '../views/Home.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import VerifyEmailView from '../views/VerifyEmailView.vue'
 import ForgotPasswordView from '../views/ForgotPassword.vue'
 import ResetPasswordView from '../views/ResetPassword.vue'
 import LayoutAuth from '@/layouts/Auth.vue'
+import LayoutDefault from '@/layouts/Default.vue'
+import Guard from '@/service/middleware'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/',
+    component: LayoutDefault,
+    beforeEnter: Guard.redirectIfNotAuthenticated,
+    children: [
+      { path: '', name: 'index', component: HomeView },
+    ]
+  },
+  {
     path: '/login',
     component: LayoutAuth,
+    beforeEnter: Guard.redirectIfAuthenticated,
     children: [
       { path: '', name: 'login', component: LoginView },
     ]

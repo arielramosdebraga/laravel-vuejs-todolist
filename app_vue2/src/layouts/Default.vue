@@ -3,7 +3,7 @@
         <TheHeader />
 
         <div class="px-3 py-10 md:px-10">
-            <RouteView />
+            <router-view></router-view>
         </div>
     </div>
 </template>
