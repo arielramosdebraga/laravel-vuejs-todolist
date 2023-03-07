@@ -80,7 +80,7 @@
         </ValidationProvider>
         <ValidationProvider
           v-slot="{ errors }"
-          rules="required"
+          :rules="{ required: true, regex: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/ }"
           name="Senha"
           class="w-full"
         >
