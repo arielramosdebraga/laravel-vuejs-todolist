@@ -88,7 +88,7 @@
     import message from '@/utils/messages';
 
     export default {
-        name: 'ResetPassword',
+        name: 'ResetPasswordView',
 
         components: {
             ValidationObserver,

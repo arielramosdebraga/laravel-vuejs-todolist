@@ -72,7 +72,7 @@
     import message from '@/utils/messages';
 
     export default {
-        name: 'ForgotPassword',
+        name: 'ForgotPasswordView',
         
         components: {
             ValidationObserver,
