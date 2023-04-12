@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/Home.vue'
-import LoginView from '../views/LoginView.vue'
-import RegisterView from '../views/RegisterView.vue'
-import VerifyEmailView from '../views/VerifyEmailView.vue'
-import ForgotPasswordView from '../views/ForgotPassword.vue'
-import ResetPasswordView from '../views/ResetPassword.vue'
+import HomeView from '@/views/HomeView.vue'
+import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
+import VerifyEmailView from '@/views/VerifyEmailView.vue'
+import ForgotPasswordView from '@/views/ForgotPasswordView.vue'
+import ResetPasswordView from '@/views/ResetPasswordView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 import LayoutAuth from '@/layouts/Auth.vue'
 import LayoutDefault from '@/layouts/Default.vue'
 import Guard from '@/service/middleware'
@@ -19,6 +20,7 @@ const routes = [
     beforeEnter: Guard.redirectIfNotAuthenticated,
     children: [
       { path: '', name: 'index', component: HomeView },
+      { path: 'perfil', name: 'profile', component: ProfileView },
     ]
   },
   {

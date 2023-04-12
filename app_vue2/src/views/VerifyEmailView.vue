@@ -20,7 +20,7 @@
     import message from '@/utils/messages';
 
     export default {
-        name: 'VerifyEmail',
+        name: 'VerifyEmailView',
 
         data() {
             return {
