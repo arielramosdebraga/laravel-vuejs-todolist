@@ -2,7 +2,7 @@
     <div class="relative inline-block text-left">
         <button
             type="button"
-            class="flex items-center justify-center leading-5 transition ease-in-out duration-150 z-50 text-sm font-medium text-cool-gray-700 hover:text-cool-gray-500 active:text-cool-gray-700 focus:border-blue-300 focus:outline-none focus:shadow-outline-blue px-4 py-2 bg-white active:bg-gray-50"
+            class="flex items-center justify-center leading-5 transition ease-in-out duration-150 z-50 text-sm font-medium text-cool-gray-700 hover:text-cool-gray-500 active:text-cool-gray-700 focus:border-blue-300 focus:outline-none focus:shadow-outline-blue px-4 py-2 bg-gray-900 active:bg-gray-900"
             :class="{ 'rounded-md': rounded, 'border border-cool-gray-300': !naked }"
             @click.stop.prevent="toggle()"
         >
